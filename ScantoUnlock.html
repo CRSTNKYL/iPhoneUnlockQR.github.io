@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Information Forwarded</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+        }
+        .container {
+            max-width: 90%; /* Adjust the width for different screen sizes */
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background for container */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #fff; /* White heading color */
+        }
+        p {
+            color: #ccc; /* Light gray paragraph color */
+            line-height: 1.6;
+        }
+        #timer {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body style="background-color: #000; color: #fff;">
-    <div style="max-width: 600px; margin: 100px auto; background-color: rgba(0, 0, 0, 0.8); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h1 style="color: #fff;">Your personal information has been forwarded to the device owner.</h1>
-        <p style="color: #ccc; line-height: 1.6;">Please await identity verification and the provision of a passcode.</p>
-        <div id="timer" style="font-size: 24px; margin-top: 20px;"><span id="timer">180</span> seconds</div>
+<body>
+    <div class="container">
+        <h1>Your personal information has been forwarded to the device owner.</h1>
+        <p>Please await identity verification and the provision of a passcode.</p>
+        <div id="timer"><span id="timer">180</span> seconds</div>
     </div>
 
     <script>
@@ -36,6 +65,13 @@
             var threeMinutes = 60 * 3,
                 display = document.querySelector('#timer');
             startTimer(threeMinutes, display);
+
+            // Check if the user agent contains "iPhone" or "iOS" to detect an iPhone
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                // Display a popup message for iPhone users
+                alert("Your personal information has been forwarded to the device owner. Please await identity verification and the provision of a passcode.");
+            }
         };
     </script>
 </body>
