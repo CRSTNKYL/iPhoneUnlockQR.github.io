@@ -1,8 +1,6 @@
 # iPhone QR Unlock Prank
 [Visit My Website](ScantoUnlock.html)
 
-Try [Visit Fullscreen](fullscreen.html)
-
 ## Overview
 The iPhone QR Unlock Prank is a humorous project designed to deter unauthorized attempts to unlock an iPhone by displaying a fake message indicating that the personal information of the unauthorized user has been sent to the device owner.
 
