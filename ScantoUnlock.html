@@ -14,7 +14,7 @@
             color: #fff; /* White text color */
         }
         .container {
-            max-width: 90%; /* Adjust the width for different screen sizes */
+            max-width: 600px;
             margin: 100px auto;
             background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background for container */
             padding: 40px;
@@ -65,13 +65,6 @@
             var threeMinutes = 60 * 3,
                 display = document.querySelector('#timer');
             startTimer(threeMinutes, display);
-
-            // Check if the user agent contains "iPhone" or "iOS" to detect an iPhone
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            if (/iPhone|iPad|iPod/i.test(userAgent)) {
-                // Display a popup message for iPhone users
-                alert("Your personal information has been forwarded to the device owner. Please await identity verification and the provision of a passcode.");
-            }
         };
     </script>
 </body>
